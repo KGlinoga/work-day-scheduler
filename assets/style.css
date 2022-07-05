@@ -70,3 +70,6 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+.events {
+  background-color: #ff6961;
+}

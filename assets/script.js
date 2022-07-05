@@ -4,7 +4,7 @@ console.log($);
 // create forms I think using Bootstrap - this will be like 1 col, auto col, 1 col. then 9 rows. - this is in the HTML?? 
     // YES we got cards to work in HTML using BS
 
-//first column will just display the hours availalbe (9am, 10am, 11am...)
+//first column will just display the hours availalbe (9am, 10am, 11am...) we COULD use a for loop iteration thing to populate all 9 boxes but.... not sure if I wannna lol.  Might be nicer  to just copy/paste this stuff by hand... MIGHT be. 
 var hourBox = $('.hour')
 hourBox.text('9AM'); 
 
@@ -12,14 +12,36 @@ hourBox.text('9AM');
     // this will be a form for text with an on("click")??  
     // or maybe a formEl.on("submit", saveEvent) ? 
     // 06 Form Elements: 
-    // function handleForm(e) { 
-    //     e.preventDefault();
-    //     var shoppinglistItem = $('input').val();
-    //     var shoppingItemEl = $('<li>').text(shoppingListItem)
-    //     shoppinglistEl.append(shoppingItemEl);
+    function handleForm(e) { 
+        e.preventDefault();
+        var shoppinglistItem = $('input').val();
+        var shoppingItemEl = $('<li>').text(shoppingListItem)
+        shoppinglistEl.append(shoppingItemEl);
     
-    // }
+    }
+
+var eventForm = $('.events');
+var eventFormInput = $('.events-input')
+
+    function handleForm() {
+        event.preventDefault();
+        var eventDesc = $('input').val();
+        var eventDescDisplay = $("form").text(eventDesc)
+        eventFormInput.append(eventDescDisplay)
+    }
     // // and then an event listener: 
+    var eventFormClick = $('.events');
+
+    eventFormClick.on("click", function(){
+        handleForm();
+        saveEvent();
+    });
+
+    // this will be to save input to local storage!!
+    function saveEvent() {
+        localStorage.setItem('eventCopy', 'eventDesc');
+    }
+    
     // shoppingFormEl.on('submit', handleFormSubmit);
             // but we'd have to change it so the FORM itself displays the text, not create a new display (OR if we do create a new display, it'll have to include an if statement/event listener for aclick when the display form is on) 
 
@@ -31,4 +53,4 @@ hourBox.text('9AM');
 //third column: Save buttons that will save user input to local storage 
     // seems like a localStorage.setItem("name", "value") kind of situation
         // localStorage.setItem("eventDesc", "var meaning the text entered into the form")
-    // and then we append?? does that display it??   
+    // and then we append?? does that display it?? 
