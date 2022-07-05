@@ -19,20 +19,20 @@ hourBox.text('9AM');
         shoppinglistEl.append(shoppingItemEl);
     
     }
-
+// OK now that we've updated the form to input, we maybe need to re-write this whole function for storing the input - saving happens from a button click!!  
 var eventForm = $('.events');
 var eventFormInput = $('.events-input')
 
-    function handleForm() {
+    function handleForm(event) {
         event.preventDefault();
         var eventDesc = $('input').val();
-        var eventDescDisplay = $("form").text(eventDesc)
+        var eventDescDisplay = $("input").text(eventDesc)
         eventFormInput.append(eventDescDisplay)
     }
     // // and then an event listener: 
     var eventFormClick = $('.events');
 
-    eventFormClick.on("click", function(){
+    *varforsaveBtnselecttor.on("click", function(){
         handleForm();
         saveEvent();
     });
