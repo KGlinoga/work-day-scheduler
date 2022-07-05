@@ -2,8 +2,11 @@ console.log($);
 
 
 // create forms I think using Bootstrap - this will be like 1 col, auto col, 1 col. then 9 rows. - this is in the HTML?? 
+    // YES we got cards to work in HTML using BS
 
 //first column will just display the hours availalbe (9am, 10am, 11am...)
+var hourBox = $('.hour')
+hourBox.text('9AM'); 
 
 //second column: forms, when clicked will allow users to enter text.  
     // this will be a form for text with an on("click")??  
