@@ -12,8 +12,8 @@ hourBox.text('9AM');
     // this will be a form for text with an on("click")??  
     // or maybe a formEl.on("submit", saveEvent) ? 
     // 06 Form Elements: 
-    function handleForm(e) { 
-        e.preventDefault();
+    function handleForm(event) { 
+        event.preventDefault();
         var shoppinglistItem = $('input').val();
         var shoppingItemEl = $('<li>').text(shoppingListItem)
         shoppinglistEl.append(shoppingItemEl);
