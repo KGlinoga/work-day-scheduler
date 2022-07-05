@@ -36,9 +36,15 @@
   <main>  
     <div class="container">
       <!-- Timeblocks go here -->
-<!-- this will be bootstrap stuff.  we'll do each row (I think??) to be like col-2(HOUR) col-auto(FORMS) col2(SAVE BUTTONS), and we'll repeat that for each hour. assign classes to each "column" (hours, forms, or save buttons) so we can assign functions via jQuery-->
-      <div class="col-1 bg-dark">
-      </div>
+<!-- this will be bootstrap stuff.  we'll do each row (I think??) to be like col-2(HOUR) col-auto(FORMS) col2(SAVE BUTTONS), and we'll repeat that for each hour. assign classes to each "column" (hours, forms, or save buttons) so we can assign functions via jQuery. **card tags** that you set the columns for-->
+
+      <div class="row">   
+        <card class="col-2 bg-dark hours">
+        </card>
+        <card class="col-8 bg-danger event"></card>
+        <card class="col-2 bg-success"></card>
+      </div>  
+
     </div>
   </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
