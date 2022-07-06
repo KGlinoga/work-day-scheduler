@@ -1,5 +1,8 @@
 console.log($);
 
+// Display current DAY: quite sure this is a Create, Style, Append situation.
+
+
 
 // create forms I think using Bootstrap - this will be like 1 col, auto col, 1 col. then 9 rows. - this is in the HTML?? 
     // YES we got cards to work in HTML using BS
@@ -10,37 +13,39 @@ hourBox.text('9AM');
 
 //second column: forms, when clicked will allow users to enter text.  
     // this will be a form for text with an on("click")??  
-    // or maybe a formEl.on("submit", saveEvent) ? 
-    // 06 Form Elements: 
-    function handleForm(event) { 
-        event.preventDefault();
-        var shoppinglistItem = $('input').val();
-        var shoppingItemEl = $('<li>').text(shoppingListItem)
-        shoppinglistEl.append(shoppingItemEl);
-    
-    }
+    // or maybe a formEl.on("submit", saveEvent) ? it's actually an <input> tag with an attribute of type="text"
+    // 06 Form Elements
+  
 // OK now that we've updated the form to input, we maybe need to re-write this whole function for storing the input - saving happens from a button click!!  
 var eventForm = $('.events');
-var eventFormInput = $('.events-input')
+var eventFormInput = $('input[name="events-input"]');
+var saveButton = $('.saveBtn');
+var eventsText = $('#events-text')
 
-    function handleForm(event) {
-        event.preventDefault();
-        var eventDesc = $('input').val();
-        var eventDescDisplay = $("input").text(eventDesc)
-        eventFormInput.append(eventDescDisplay)
-    }
+// var eventCopy = eventFormInput.value;
+
+    // function handleForm(event) {
+    //     event.preventDefault();
+    //     var eventDesc = $('input').val();
+    //     var eventDescDisplay = $("input").text(eventDesc)
+    //     eventFormInput.append(eventDescDisplay)
+    // }
     // // and then an event listener: 
-    var eventFormClick = $('.events');
+   saveButton.on("click", function() {
+    localStorage.setItem("eventCopy", eventFormInput.val());
+    console.log(eventFormInput.val());
+    
+   })
 
-    *varforsaveBtnselecttor.on("click", function(){
-        handleForm();
-        saveEvent();
-    });
+    // *varforsaveBtnselecttor.on("click", function(){
+    //     handleForm();
+    //     saveEvent();
+    // }); < commmented this out to allow JS to work, will fix after class today :D
 
     // this will be to save input to local storage!!
-    function saveEvent() {
-        localStorage.setItem('eventCopy', 'eventDesc');
-    }
+    // function saveEvent() {
+    //     localStorage.setItem('eventCopy', );
+    // }
     
     // shoppingFormEl.on('submit', handleFormSubmit);
             // but we'd have to change it so the FORM itself displays the text, not create a new display (OR if we do create a new display, it'll have to include an if statement/event listener for aclick when the display form is on) 
@@ -50,6 +55,11 @@ var eventFormInput = $('.events-input')
 
     // change colors based on past, present or future- I think these are just jQuery forms (see above line)
         // let's try the following: setting an attribute (in JS declare a var that selects all the cells of this column)(use thatVar.attr('name of property', 'value'))(OR try .css(bg for background color??, the color vars given in the stylesheet.))
+
+// var eventBlocks = $('.events');
+// eventBlocks.attr('timeColor', funtcion(){
+//     if 
+// })
     // Once there's a method that changes the color of the blocks, we'll set it to an event listener(?OROROROR an if statment) that follows the time. maybe, if hour<=moment.js(something) {color: gray}  OR if hour===moment.js(Something) {color green} OR if hour>=moment.js {color red} ..orsomething like that.
 
 
@@ -57,3 +67,4 @@ var eventFormInput = $('.events-input')
     // seems like a localStorage.setItem("name", "value") kind of situation
         // localStorage.setItem("eventDesc", "var meaning the text entered into the form")
     // and then we append?? does that display it?? 
+    // YESSSSS got the buttons to exist!!  Next we tackle the above-commented functionality.  
