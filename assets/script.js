@@ -6,7 +6,8 @@ console.log($);
 
 //first column will just display the hours availalbe (9am, 10am, 11am...) we COULD use a for loop iteration thing to populate all 9 boxes but.... not sure if I wannna lol.  Might be nicer  to just copy/paste this stuff by hand... MIGHT be. 
 var hourBox = $('.hour');
-hourBox.text("9AM"); 
+hourBox.text(9); 
+
 
 //second column: forms, when clicked will allow users to enter text.  
 // this will be a form for text with an on("click")??  
@@ -73,16 +74,19 @@ saveButton.on("click", function() {
             // color change: 
             
             function time() {
-                if (hourBox.text <= moment().format("k")){
+                if (hourBox.text < moment().format("k")){
                     console.log("boom");
+                    eventForm.attr("class", "past col-8");    
                 }
-                else if (hourBox.text >= moment().format("k")){
-                    console.log("holler");
-                    eventForm.attr("class", "past col-8");
+                else if (hourBox.text > moment().format("k")){
+                    eventForm.attr("class", "future col-8");
+                }
+                else if (hourBox.text = moment().format("k")) {
+                    eventForm.attr("class", "present col-8");
                 }
             }
             time();
-            console.log(moment().format("k"));
+            
             
             //third column: Save buttons that will save user input to local storage 
             // seems like a localStorage.setItem("name", "value") kind of situation
