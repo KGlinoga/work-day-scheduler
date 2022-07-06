@@ -1,16 +1,7 @@
 # work-day-scheduler
 Challenge 5 - Work Day Scheduler
 
-# <Your-Project-Title>
-
 ## Description
-
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
 This is a Work Day Scheduler. Coding this app was meant to demonstrate some comprehension of jquery, JavaScript, Bootstrap, among other concepts covered in class.  
   
