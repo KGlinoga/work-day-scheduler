@@ -5,8 +5,8 @@ console.log($);
 // YES we got cards to work in HTML using BS
 
 //first column will just display the hours availalbe (9am, 10am, 11am...) we COULD use a for loop iteration thing to populate all 9 boxes but.... not sure if I wannna lol.  Might be nicer  to just copy/paste this stuff by hand... MIGHT be. 
-var hourBox = $('.hour')
-hourBox.text('9AM'); 
+var hourBox = $('.hour');
+hourBox.text("9AM"); 
 
 //second column: forms, when clicked will allow users to enter text.  
 // this will be a form for text with an on("click")??  
@@ -73,14 +73,19 @@ saveButton.on("click", function() {
             // color change: 
             
             function time() {
-                if (hourBox !== moment()){
+                if (hourBox.text <= moment().format("k")){
                     console.log("boom");
+                }
+                else if (hourBox.text >= moment().format("k")){
+                    console.log("holler");
+                    eventForm.attr("class", "past col-8");
                 }
             }
             time();
+            console.log(moment().format("k"));
             
             //third column: Save buttons that will save user input to local storage 
             // seems like a localStorage.setItem("name", "value") kind of situation
         // localStorage.setItem("eventDesc", "var meaning the text entered into the form")
     // and then we append?? does that display it?? 
-    // YESSSSS got the buttons to exist!!  Next we tackle the above-commented functionality.  
+    // YESSSSS got the buttons to exist!!  Next we tackle the above-commented f  
