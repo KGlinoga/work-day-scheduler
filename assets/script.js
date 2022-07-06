@@ -2,7 +2,8 @@ console.log($);
 
 // Display current DAY: quite sure this is a Create, Style, Append situation.
 
-
+var today = moment();
+$("#currentDay").text(today.format("dddd, MMMM D, YYYY"))
 
 // create forms I think using Bootstrap - this will be like 1 col, auto col, 1 col. then 9 rows. - this is in the HTML?? 
     // YES we got cards to work in HTML using BS
