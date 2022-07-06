@@ -21,21 +21,30 @@ var eventForm = $('.events');
 var eventFormInput = $('input[name="events-input"]');
 var saveButton = $('.saveBtn');
 var eventsText = $('#events-text')
+var eventDisplay = localStorage.getItem("eventCopy");
 
-// var eventCopy = eventFormInput.value;
 
-    // function handleForm(event) {
-    //     event.preventDefault();
-    //     var eventDesc = $('input').val();
-    //     var eventDescDisplay = $("input").text(eventDesc)
-    //     eventFormInput.append(eventDescDisplay)
-    // }
+
     // // and then an event listener: 
    saveButton.on("click", function() {
     localStorage.setItem("eventCopy", eventFormInput.val());
     console.log(eventFormInput.val());
-    
    })
+
+   
+   
+   // The init() function fires when the page is loaded 
+   function init() {
+//        // When the init function is executed, the code inside renderLastGrade function will also execute
+       eventsText.textContent = eventDisplay;
+       console.log(localStorage.getItem("eventCopy"));
+
+  }
+  init();
+
+
+  //Gabe's suggestion: 
+  $("#events-text").val(localStorage.getItem("events-text"));
 
     // *varforsaveBtnselecttor.on("click", function(){
     //     handleForm();
